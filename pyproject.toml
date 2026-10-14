@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portal-projector"
+version = "1.0.0"
+description = "PORTAL: a training-free projector for multimodal LLMs via optimal transport."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Fabian Gröger" },
+    { name = "Naël Ouerghemi" },
+    { name = "Shuo Wen" },
+    { name = "Maria Brbić" },
+]
+keywords = ["multimodal", "LLM", "LLaVA", "projector", "optimal-transport", "vision-language"]
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.44.0",
+    "accelerate>=0.30.0",
+    "sentencepiece>=0.1.99",
+    "pillow>=9.0.0",
+    "loguru>=0.7.0",
+    "tqdm>=4.65.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[project.urls]
+Repository = "https://github.com/mlbio-epfl/PORTAL"
+Paper = "https://arxiv.org/abs/2610.18598"
+Homepage = "https://brbiclab.epfl.ch/projects/portal/"
+
+[tool.setuptools]
+packages = ["portal"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

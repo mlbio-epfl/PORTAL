@@ -1,0 +1,32 @@
+# PORTAL projector construction config.
+#
+# Usage:  python scripts/build_projector.py --config configs/portal.yaml
+# Command-line flags override any value set here.
+#
+# All paths are placeholders — override them for your environment. Nothing here
+# points to a private filesystem; the image pool is any directory of natural
+# images (the paper uses COCO val2017, 1024 images).
+
+# --- Models ---
+clip_model: "openai/clip-vit-large-patch14-336"   # vision encoder (source)
+llm_model: "llava-hf/llava-1.5-7b-hf"             # target LLM (CausalLM or LLaVA)
+
+# --- Vision statistics (source) ---
+image_dir: "/path/to/coco/val2017"   # unlabeled image pool; no captions used
+n_images: 1024                        # images sampled from the pool
+batch_size: 8
+
+# --- PORTAL map ---
+k: 512                 # PCA rank; robust over {64,128,256,512,1024}, 512 is the default
+max_scale_ratio: 100.0 # clamp on per-axis sigma_y/sigma_x (null to disable)
+seed: 42
+
+# --- Target layer ---
+# layer: 0  -> input embedding table   (default PORTAL)
+# layer: L>0 -> hidden states after block L (PORTAL-ctx-L); requires `prompts`
+layer: 0
+prompts: "examples/words.txt"   # words/phrases file, only used when layer > 0
+
+# --- Output ---
+out: "checkpoints/portal_vicuna_clip"
+# config_source: "/path/to/trained/llava/projector"  # optional: copy its config.json

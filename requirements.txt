@@ -1,0 +1,11 @@
+# Core runtime dependencies for PORTAL construction.
+# Lower bounds reflect the versions used in the paper; newer patch releases are
+# expected to work. Pin exactly if you need bit-for-bit reproducibility.
+torch>=2.0.0
+transformers>=4.44.0
+accelerate>=0.30.0
+sentencepiece>=0.1.99
+pillow>=9.0.0
+loguru>=0.7.0
+tqdm>=4.65.0
+pyyaml>=6.0        # for build_projector.py --config

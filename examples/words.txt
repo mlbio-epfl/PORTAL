@@ -1,0 +1,82 @@
+# English words and short phrases for PORTAL-ctx target statistics.
+# Only used when --layer > 0. One prompt per line; '#' lines are ignored.
+# This is a small starter list — expand it (a few thousand entries) for a
+# more stable estimate of the hidden-state distribution.
+a photo of a dog
+a photo of a cat
+a person riding a bicycle
+a red car on the street
+a group of people
+the sky is blue
+a plate of food
+a wooden table
+children playing in a park
+a tall building in the city
+mountains and a lake
+a cup of coffee
+an open book
+a laptop on a desk
+flowers in a vase
+a train at the station
+a bird flying
+a boat on the water
+snow on the ground
+a busy market
+dog
+cat
+house
+tree
+water
+mountain
+ocean
+street
+building
+car
+bicycle
+person
+child
+woman
+man
+food
+table
+chair
+window
+door
+book
+computer
+phone
+camera
+clock
+flower
+grass
+sky
+cloud
+sun
+moon
+star
+river
+bridge
+road
+train
+airplane
+boat
+bird
+fish
+horse
+cow
+sheep
+apple
+bread
+coffee
+music
+color
+light
+shadow
+morning
+night
+winter
+summer
+city
+village
+forest
+desert
